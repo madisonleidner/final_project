@@ -1,26 +1,121 @@
+body{
+    background-color: aliceblue;
+}
 .gallery{
     display: grid;
+    width: 90%;
     margin: 0 auto;
-    text-align: center;
-    grid-template-rows: 2fr 2fr 2fr;
+    text-align:center;
+    justify-items: center;
+    align-items:center;
+    padding: 0px 20px 0px 20px;
 }
 .gallery img{
-    width: 20%;
+    width: 70%;
     height: 200px;
     padding: 10px 0px 10px 0px;
     justify-content: space-between;
 }
-nav li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+img:focus{
+    border: 2px solid navy;
+}
+figcaption{
+    text-align: center;
+    font-family: "Gill Sans";
     padding: 2px 2px 2px 2px;
+}
+
+ul{
+    display: flex;
+}
+ul li{
+    padding: 4px 4px 4px 4px;
+}
+a{
+    color: navy;
+    text-decoration: none;
+}
+a:hover{
+    color: rebeccapurple;
+}
+.active{
+    text-decoration: underline;
 }
 .overview{
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    justify-items: center;
 }
 .overview img{
-    width: 100%;
+    width: 50%;
     height: 200px;
+    padding: 0px 0px 15px 0px;
+}
+.skip a{
+    background: aliceblue;
+    left: 0;
+    padding: 2px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+    position: absolute;
+    top: -40px;
+}
+.skip a:focus{
+    top: 2px;
+}
+h1{
+    padding: 20px 5px 10px 5px;
+    font-family: "Gill Sans";
+    font-size: 40px;
+}
+p{
+    margin: 40px;
+    font-size: 20px;
+    font-family: "Gill Sans";
+    padding: 10px;
+    text-align: center;
+}
+.gallery a{
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 2px 5px 0 black, 0 5px 15px 0 gray;
+    margin-bottom: 25px;
+  }
+
+@media screen and (min-width: 770px){
+    .gallery{
+        grid-template-columns: 2fr 2fr;
+    }
+    .gallery a:nth-child(3n){
+        grid-column: 1 / span 2;
+    }
+    h1{
+        text-align: center;
+    }
+    ul{
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1025px){
+    .gallery{
+        grid-template-columns: 2fr 2fr 2fr;
+    }
+    .gallery a:nth-child(3n){
+        grid-column: 3 / span 1;
+    }
+    h1{
+        text-align: end;
+    }
+    ul{
+        justify-content: end;
+    }
+    .gallery a{
+        background-color:aliceblue;
+        box-shadow: none;
+        margin-bottom: 0px;
+    }
+    .gallery a:hover, .gallery a:focus{
+        transform: scale(1.2);
+    }
 }
